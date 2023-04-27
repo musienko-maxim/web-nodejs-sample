@@ -4,7 +4,7 @@ metadata:
 components:
   - name: tools
     container:
-      image: quay.io/mmusiien/udi-rhel8:postaction2
+      image: registry.redhat.io/devspaces/udi-rhel8
       args: ['tail', '-f', '/dev/null']
       endpoints:
         - exposure: public
