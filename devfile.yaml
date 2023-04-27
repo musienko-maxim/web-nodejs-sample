@@ -4,8 +4,7 @@ metadata:
 components:
   - name: tools
     container:
-      image: quay.io/mmusiien/udi-rhel8:postaction3
-      args: ['tail', '-f', '/dev/null']
+      image: quay.io/mmusiien/udi-rhel8:postaction4
       endpoints:
         - exposure: public
           name: nodejs
