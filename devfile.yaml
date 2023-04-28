@@ -5,6 +5,7 @@ components:
   - name: tools
     container:
       image: quay.io/mmusiien/udi-rhel8:postaction3
+       args: ['tail', '-f', '/dev/null']
       endpoints:
         - exposure: public
           name: nodejs
