@@ -18,10 +18,13 @@ inline:
     - id: init-container-command
       apply:
         component: che-code-injector
+  events:
+    preStart:
+      - init-container-command
   components:
     - name: che-code-injector
       container:
-        image: 'quay.io/che-incubator/che-code:insiders'
+        image: 'quay.io/che-incubator/che-idea:next'
         command: ["/entrypoint-init-container.sh"]
         volumeMounts:
           - name: checode
@@ -37,6 +40,8 @@ inline:
         memoryRequest: 256Mi
         cpuLimit: 500m
         cpuRequest: 30m
+        command:
+          - /checode/entrypoint-volume.sh
         volumeMounts:
           - name: checode
             path: /checode
